@@ -1,0 +1,38 @@
+<MainScreen>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 10
+
+    Label:
+        text: "Tính toán số tiền vay tối thiểu"
+        font_size: "24sp"
+        size_hint_y: None
+        height: self.texture_size[1]
+
+    TextInput:
+        id: capital_input
+        hint_text: "Nhập số vốn (USD)"
+        multiline: False
+        input_filter: "float"
+        font_size: "18sp"
+
+    TextInput:
+        id: level_input
+        hint_text: "Nhập level yêu cầu"
+        multiline: False
+        input_filter: "float"
+        font_size: "18sp"
+
+    Button:
+        text: "Tính toán"
+        font_size: "18sp"
+        size_hint_y: None
+        height: "50dp"
+        on_press: root.calculate_borrowed_amount()
+
+    Label:
+        text: root.result
+        font_size: "18sp"
+        color: (0, 0.5, 0.5, 1)
+        size_hint_y: None
+        height: self.texture_size[1]
